@@ -15,14 +15,16 @@ public class Game implements GameInterface {
   public String startGame() {
     setSecretNumber(getSecretNumber()); 
     player.setGamesPlayed();
+    gameStatus = false;
     String startInfo = "Welcome to the Game!\n" +
                         "The system will give a random number from 1 to 100.\n" +
                         "And you have 10 chances to guess the secret number.";
     return startInfo;
   }
 
-  public String endGame() {
-    return "Game Over!";
+  public String endGame(String msg) {
+    player.resetGuessTimes();
+    return msg;
   }
 
   public boolean getGameStatus() {
@@ -51,16 +53,16 @@ public class Game implements GameInterface {
     if (guess.equals(secretNumber)) {
       player.setGameResult("Win!Your game score is: " + gameScore);
       gameStatus = true;
-      endGame();
+      
       player.writePlayerInfoToFile("src\\main\\java\\com\\example\\game\\PlayerInfo.txt");
-      return ("You win! Your score is: " + gameScore);
+      return endGame("You win! Your score is: " + gameScore);
     } else {
       if (gameScore <= 0) {
         player.setGameResult("Lose!Maximum guesses reached.");
         gameStatus = true;
-        endGame();
+
         player.writePlayerInfoToFile("src\\main\\java\\com\\example\\game\\PlayerInfo.txt");
-        return ("Lose!The secret number was: " + secretNumber);
+        return endGame("Lose!The secret number was: " + secretNumber);
       } else {
         if (guess < secretNumber) {
           return "The secret number is higher.";

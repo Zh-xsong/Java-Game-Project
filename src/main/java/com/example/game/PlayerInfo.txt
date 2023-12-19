@@ -1,5 +1,12 @@
-
-Player Name: player
+Player Name: test
 games Played: 1
+Guess Times: 7
+Game Result: Win!Your game score is: 3
+Player Name: test
+games Played: 2
+Guess Times: 10
+Game Result: Lose!Maximum guesses reached.
+Player Name: test
+games Played: 3
 Guess Times: 7
 Game Result: Win!Your game score is: 3

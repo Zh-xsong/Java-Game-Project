@@ -31,6 +31,9 @@ public class GameController {
     
   @PutMapping("/game")
   public String makeGuess(@RequestParam Integer guess) {
+    if(currentGame.getGameStatus()){
+      return "Please start game first";
+    }
     String guessResult = currentGame.processGuess(guess);
     return guessResult;
   }

@@ -47,6 +47,10 @@ public class Player implements PlayerInterface {
     this.guessTimes++;
   }
 
+  public void resetGuessTimes() {
+    this.guessTimes = 0;
+  }
+
   public Integer getGuessTimes() {
     return this.guessTimes;
   }
