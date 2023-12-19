@@ -31,8 +31,6 @@ public class Game implements GameInterface {
     return gameStatus;
   }
 
-
-
   public Integer getSecretNumber() {
     Random rand = new Random();
     int upperbound = 100;
@@ -53,14 +51,12 @@ public class Game implements GameInterface {
     if (guess.equals(secretNumber)) {
       player.setGameResult("Win!Your game score is: " + gameScore);
       gameStatus = true;
-      
       player.writePlayerInfoToFile("src\\main\\java\\com\\example\\game\\PlayerInfo.txt");
       return endGame("You win! Your score is: " + gameScore);
     } else {
       if (gameScore <= 0) {
         player.setGameResult("Lose!Maximum guesses reached.");
         gameStatus = true;
-
         player.writePlayerInfoToFile("src\\main\\java\\com\\example\\game\\PlayerInfo.txt");
         return endGame("Lose!The secret number was: " + secretNumber);
       } else {
