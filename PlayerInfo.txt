@@ -1,0 +1,8 @@
+Player Name: emmm
+games Played: 0
+Guess Times: 6
+Game Result: Win!Your game score is: 4
+Player Name: test
+games Played: 0
+Guess Times: 3
+Game Result: Win!Your game score is: 7
